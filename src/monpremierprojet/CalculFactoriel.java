@@ -12,7 +12,7 @@ public class CalculFactoriel {
 			if(n > 0) {
 				System.out.println(getFactoriel(n));
 			} else {
-				System.out.println("Il faut saisir un nombre entier positif.");
+				System.out.println("Vous devez saisir un nombre entier positif.");
 			}
 			
 		} catch(Exception ex) {
