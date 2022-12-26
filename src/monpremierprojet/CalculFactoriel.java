@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CalculFactoriel {
 
 	public static void main(String[] args) {
-		System.out.println("Veuillez entrer un nombre entier :");
+		System.out.println("Veuillez saisir un nombre entier :");
 		Scanner scanner = new Scanner(System.in);
 		try {
 			int n = scanner.nextInt();
