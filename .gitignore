@@ -1,6 +1,6 @@
 .gitignore
 */*.class
-bin/monpremierprojet/Main.class
+#bin/monpremierprojet/Main.class
 bin/monpremierprojet/MaClasse.class
 bin/monpremierprojet/CalculFactoriel.class
 monpremierprojet.iml
