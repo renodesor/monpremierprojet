@@ -16,7 +16,7 @@ public class CalculFactoriel {
 			}
 			
 		} catch(Exception ex) {
-			System.out.println("Le texte saisi n'est pas un entier.");
+			System.out.println("La valeur saisie n'est pas un entier.");
 		} finally {
 			scanner.close();
 		}
