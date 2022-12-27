@@ -2,7 +2,7 @@ resources:
 - name: repo
   type: git
   source:
-    uri: https://renodesor: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@github.com/renodesor/monpremierprojet.git
+    uri: https://renodesor:<TOKEN>@github.com/renodesor/monpremierprojet.git
     branch: main
     # private_key: |
     #   -----BEGIN OPENSSH PRIVATE KEY-----
