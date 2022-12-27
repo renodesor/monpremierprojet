@@ -1,0 +1,52 @@
+resources:
+- name: repo
+  type: git
+  source:
+    uri: https://renodesor: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@github.com/renodesor/monpremierprojet.git
+    branch: main
+    # private_key: |
+    #   -----BEGIN OPENSSH PRIVATE KEY-----
+    #   b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABClv/G/Jm
+    #   B27dM+TOf7pBEwAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIMVo5qtJLvF1+W3q
+    #   XBiaAcOfwxCSNzabcEeGMPdaF928AAAAoPbT1k8dbdEnXe+v+RvfCtvqNgD64RSF5J2X1c
+    #   xekXUeSxrrAyWVOPCJXCLtnFYqXtKPgINKvdaaS5VOjpAt7QXM5kmARR1ca8c/qKrKltxI
+    #   TymGG6HflHH0yzYTrGuHkO4dAz9SKd1N4ktJB7DPoYMJEs+mDBuirRYV/9fDvzJqIigPCi
+    #   yGY/lqmMjHSi04oIINRxn3b4G4Sm/ZaVNW174=
+    #   -----END OPENSSH PRIVATE KEY-----
+    # private_key_passphrase: renodesor
+
+jobs:
+- name: hello-world-job
+  plan:
+  - get: repo
+    trigger: true
+  - task: create-commit
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: gitea/gitea
+      inputs:
+      - name: repo
+      outputs:
+      - name: repo
+      params:
+        EMAIL: renodesor@gmail.com
+        GIT_AUTHOR_NAME: renodesor
+      run:
+        path: sh
+        args:
+        - -cx
+        - |
+          cd repo
+          date +%Y-%m-%d > todays-date
+          git add ./todays-date
+          git add .
+          git config --global user.email $EMAIL
+          git config --global user.name $GIT_AUTHOR_NAME
+          git config --global user.password "D&sormeau1gi"
+          git commit -m "Update todays date"
+  - put: repo
+    params:
+      repository: repo
