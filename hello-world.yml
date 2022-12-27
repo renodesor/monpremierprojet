@@ -45,7 +45,6 @@ jobs:
           git add .
           git config --global user.email $EMAIL
           git config --global user.name $GIT_AUTHOR_NAME
-          git config --global user.password "D&sormeau1gi"
           git commit -m "Update todays date"
   - put: repo
     params:
