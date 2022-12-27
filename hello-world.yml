@@ -19,7 +19,7 @@ jobs:
 - name: hello-world-job
   plan:
   - get: repo
-    trigger: true
+    trigger: false
   - task: create-commit
     config:
       platform: linux
